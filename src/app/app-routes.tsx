@@ -1,8 +1,14 @@
 import React, { Suspense } from 'react';
 import { createBrowserRouter, RouterProvider, Outlet } from 'react-router-dom';
 import { UiLayout } from '../components/ui/UiLayout';
-import { routes, navigationLinks } from '../routes/index';
+import { routes } from '../routes/index';
 import { MotionWrapper } from '../components/MotionWrapper';
+
+ const navigationLinks = [
+  { label: 'Home', path: '/' },
+  { label: 'About', path: '/about' }, 
+  { label: 'Photography', path: '/photography' },
+];
 
 const router = createBrowserRouter([
   {

@@ -1,10 +1,12 @@
 import { lazy } from 'react';
 import { RouteObject } from 'react-router-dom';
 
-const Home = lazy(() => import('../pages/Home/index'));
-const About = lazy(() => import('../pages/About/index'));
-const Photography = lazy(() => import('../pages/Photography/index')); // Ensure file path matches
-const ErrorPage = lazy(() => import('../pages/Error/index'));
+import Home from '../pages/Home/index';
+import About from '../pages/Home/index'
+import ErrorPage from '../pages/Error/index';
+
+// Keep incase photography page uses full size images 
+const Photography = lazy(() => import('../pages/Photography')); 
 
 export const routes: RouteObject[] = [
   {
@@ -25,8 +27,3 @@ export const routes: RouteObject[] = [
   },
 ];
 
-export const navigationLinks = [
-  { label: 'Home', path: '/' },
-  { label: 'About', path: '/about' }, 
-  { label: 'Photography', path: '/photography' },
-];
