@@ -28,10 +28,10 @@ export function IcosahedronGeometry({ posX, posY, scale: initialScale = 0.83 }: 
 
   useEffect(() => {
  if (windowWidth <= 668) {
-      setAdjustedPosX(0);
-      setAdjustedPosY(-0.4);
-      setScale(0.58);
-      setHoverScale(1.05); 
+      // setAdjustedPosX(0);
+      // setAdjustedPosY(-0.4);
+      // setScale(0.58);
+      // setHoverScale(1.05); 
     } 
     else if (windowWidth <= 1268) {
       setAdjustedPosX(posX);

@@ -17,11 +17,14 @@ const AboutPage: React.FC = () => {
   const [showGithubLink, setShowGithubLink] = useState(false);
 
   useEffect(() => {
+
     setIsMobile(window.innerWidth < 768);
 
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
+
+    
     window.addEventListener('resize', handleResize);
 
     return () => window.removeEventListener('resize', handleResize);
@@ -64,8 +67,8 @@ const AboutPage: React.FC = () => {
       </motion.footer>
 
       <motion.div className="fixed bottom-8 right-8 flex flex-col items-end text-2xl text-gray-600 z-10">
-        <p className="text-lg opacity-90">AutDev</p>
-        <p className="md:text-xs text-[0.5rem]  opacity-70 mt-1">
+        {/* <p className="text-lg opacity-90">AutDev</p> */}
+        <p className="md:text-xs text-[0.7rem] dark:text-white text-gray-black opacity-100 dark:opacity-50 mt-1">
           Built with Three.JS, React & TypeScript
         </p>
       </motion.div>
