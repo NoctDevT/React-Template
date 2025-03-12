@@ -72,12 +72,14 @@ const AboutPage: React.FC = () => {
       <div
   className="absolute top-[0%] sm:top-[24%] left-1/2 transform 
   -translate-x-1/2 sm:left-[15%] tracking-wider sm:transform-none sm:text-left
-  md:left-[5%]"
+  md:left-[5%] w-full max-w-[90%]  "
 >
 
 <div className="flex flex-col items-start text-left mt-4 md:mt-0 space-y-4">
 
-          <h1 className="text-2xl text-gray-800 md:text-6xl lg:text-6xl text-center md:text-left font-bold leading-tight dark:text-gray-100">
+          <h1 className="text-2xl text-gray-800 md:text-6xl 
+          lg:text-6xl text-left md:text-left font-bold leading-tight
+           dark:text-gray-100">
             <Typewriter
               options={{
                 delay: 60,
@@ -105,7 +107,7 @@ const AboutPage: React.FC = () => {
                 ? theme === 'light'
                   ? 'text-[#333]' 
                   : 'text-white' 
-                : 'bg-gradient-to-r from-gray-400 via-gray-500 to-gray-700 bg-[length:400%_400%] bg-clip-text text-transparent animate-gradient-wave' 
+                : 'bg-gradient-to-r from-gray-400  via-gray-500 to-gray-700 bg-[length:400%_400%] bg-clip-text text-transparent animate-gradient-wave' 
             } text-center md:text-left`}>
               <Typewriter
                 options={{ delay: isMobile ? 40 : 40 }}
@@ -121,7 +123,7 @@ const AboutPage: React.FC = () => {
             </p>
 
               {showGithubLink && (
-                <div className="flex items-center gap-2 mt-4 text-gray-500 w-full justify-center md:justify-start">
+                <div className="flex items-left gap-2 mt-4 text-gray-500 w-full justify-left md:justify-start">
                   <a
                     href="https://github.com/NoctDevT"
                     target="_blank"
