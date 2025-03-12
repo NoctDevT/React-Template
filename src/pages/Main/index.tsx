@@ -9,6 +9,8 @@ import Typewriter from 'typewriter-effect';
 import { FaGithub, FaTwitter } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import GlitchText from '../../components/animatedComponents/GlitchText';
+import toast, { Toaster } from 'react-hot-toast';
+import { checkHardwareAcceleration } from '../../helper/checkHardwareAcceleration';
 
 const AboutPage: React.FC = () => {
   const { theme } = useTheme();
@@ -17,17 +19,21 @@ const AboutPage: React.FC = () => {
   const [showGithubLink, setShowGithubLink] = useState(false);
 
   useEffect(() => {
-
     setIsMobile(window.innerWidth < 768);
 
     const handleResize = () => {
       setIsMobile(window.innerWidth < 768);
     };
 
-    
     window.addEventListener('resize', handleResize);
 
     return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  useEffect(() => {
+    if (!checkHardwareAcceleration()) {
+      toast.error('Hardware acceleration is not enabled. Some features may not work properly.');
+    }
   }, []);
 
   return (
@@ -66,10 +72,8 @@ const AboutPage: React.FC = () => {
         <GlitchText text="PORTFOLIO 2024" duration={9000} repeatDelay={10000} />
       </motion.footer>
 
-      {/* flex flex-col items-end */}
       <motion.div className="fixed bottom-8 right-8
         text-2xl text-gray-600 z-10">
-        {/* <p className="text-lg opacity-90">AutDev</p> */}
         <p className="md:text-xs text-[0.7rem] dark:text-white text-gray-black opacity-100 dark:opacity-50 mt-1">
           Built with Three.JS, React & TypeScript
         </p>
@@ -221,5 +225,7 @@ const AboutPage: React.FC = () => {
     </div>
   );
 };
+
+
 
 export default AboutPage;
