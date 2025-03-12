@@ -9,7 +9,7 @@ import Typewriter from 'typewriter-effect';
 import { FaGithub, FaTwitter } from 'react-icons/fa';
 import { motion } from 'framer-motion';
 import GlitchText from '../../components/animatedComponents/GlitchText';
-import toast, { Toaster } from 'react-hot-toast';
+import toast from 'react-hot-toast';
 import { checkHardwareAcceleration } from '../../helper/checkHardwareAcceleration';
 
 const AboutPage: React.FC = () => {
@@ -17,7 +17,7 @@ const AboutPage: React.FC = () => {
   const [isMobile, setIsMobile] = useState(false);
   const [showParagraph, setShowParagraph] = useState(false);
   const [showGithubLink, setShowGithubLink] = useState(false);
-
+  const [hardwareAcceleration, setHardwareAcceleration] = useState(false);
   useEffect(() => {
     setIsMobile(window.innerWidth < 768);
 
@@ -32,14 +32,32 @@ const AboutPage: React.FC = () => {
 
   useEffect(() => {
     if (!checkHardwareAcceleration()) {
-      toast.error('Hardware acceleration is not enabled. Some features may not work properly.');
+      toast.error(
+      <div>
+        <strong>Hardware Acceleration Not Enabled</strong>
+        <div>
+          Please enable hardware or graphics acceleration to correctly view this website.
+        </div>
+      </div>,
+        {
+          duration: 10000,
+          position: 'top-center',
+          style: {
+            background: '#333',
+            color: '#fff',
+          },
+        }
+      );
+      setHardwareAcceleration(false);
+    } else {
+      setHardwareAcceleration(true);
     }
   }, []);
 
   return (
     <div className="relative min-h-screen min-w-screen">
       <div className="absolute top-0 left-0 w-full h-full z-0">
-        <Suspense fallback={<h1>Loading...</h1>}>
+      {hardwareAcceleration && <Suspense fallback={<h1>Loading...</h1>}>
           <Canvas flat shadows linear>
             <PostProcessComposer>
               <Noise opacity={0.28} />
@@ -62,9 +80,9 @@ const AboutPage: React.FC = () => {
                 luminanceSmoothing={0.2}
               />
             </PostProcessComposer>
-            <IcosahedronGeometry posX={1.8} posY={0} scale={0.85} />
+             <IcosahedronGeometry posX={1.8} posY={0} scale={0.85} />
           </Canvas>
-        </Suspense>
+        </Suspense> }
       </div>
       <motion.footer className="fixed font-departure bottom-8 left-8 text-xs text-gray-600 z-10">
         <GlitchText text="WEB DEVELOPER" duration={9000} repeatDelay={10000} />
