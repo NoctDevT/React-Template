@@ -19,8 +19,8 @@ const Dashboard: React.FC = () => {
   };
 
   return (
-    <div className="relative h-screen overflow-y-auto">
-      <div className="container mx-auto px-4 py-12 pb-32">
+<div className="relative h-screen overflow-y-auto pb-20">
+    <div className="container mx-auto px-4 py-12 pb-32">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center mb-12">
           <div className="flex justify-center">
             <ProfileCard
