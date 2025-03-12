@@ -66,7 +66,9 @@ const AboutPage: React.FC = () => {
         <GlitchText text="PORTFOLIO 2024" duration={9000} repeatDelay={10000} />
       </motion.footer>
 
-      <motion.div className="fixed bottom-8 right-8 flex flex-col items-end text-2xl text-gray-600 z-10">
+      {/* flex flex-col items-end */}
+      <motion.div className="fixed bottom-8 right-8
+        text-2xl text-gray-600 z-10">
         {/* <p className="text-lg opacity-90">AutDev</p> */}
         <p className="md:text-xs text-[0.7rem] dark:text-white text-gray-black opacity-100 dark:opacity-50 mt-1">
           Built with Three.JS, React & TypeScript
