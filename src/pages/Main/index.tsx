@@ -65,7 +65,7 @@ const AboutPage: React.FC = () => {
 
       <motion.div className="fixed bottom-8 right-8 flex flex-col items-end text-2xl text-gray-600 z-10">
         <p className="text-lg opacity-90">AutDev</p>
-        <p className="text-xs opacity-70 mt-1">
+        <p className="md:text-xs text-[0.5rem]  opacity-70 mt-1">
           Built with Three.JS, React & TypeScript
         </p>
       </motion.div>
