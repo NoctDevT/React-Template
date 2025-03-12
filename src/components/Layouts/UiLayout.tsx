@@ -58,7 +58,7 @@ export const UiLayout: React.FC<UiLayoutProps> = ({
 
   return (
     <div
-      className={`relative flex flex-col items-center justify-center min-h-screen transition-colors duration-500 overflow-hidden ${bgClass}`}
+      className={`relative flex flex-col items-center justify-center min-h-[100dvh] transition-colors duration-500 overflow-hidden ${bgClass}`}
     >
       <motion.header className="absolute top-8 left-8 right-8 flex justify-between items-center">
         <motion.div className="font-departure text-md">

@@ -86,8 +86,8 @@ const AboutPage: React.FC = () => {
 
           {showParagraph && (
             <>
-              <p className="text-base md:text-lg dark:text-gray-000 text-white md:text-gray-900 text-center md:text-left">
-                <Typewriter
+<p className="hidden md:block text-base md:text-lg dark:text-gray-000 text-white md:text-gray-900 text-center md:text-left">
+<Typewriter
                   options={{ delay: 40 }}
                   onInit={(typewriter) => {
                     typewriter
@@ -96,7 +96,7 @@ const AboutPage: React.FC = () => {
                           (theme === 'light' ? 'light-mode-mobile-text' : 'white-text') : 'gradient-wave-text'
                         
                         }">
-                          Web Developer and Photographer</span>`
+                          Full stack Developer and Photographer</span>`
                       )
                       .callFunction(() => setTimeout(() => setShowGithubLink(true), 1000))
                       .start();
