@@ -26,7 +26,7 @@ const AboutPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative min-h-screen w-screen">
+    <div className="relative min-h-screen min-w-screen">
       <div className="absolute top-0 left-0 w-full h-full z-0">
         <Suspense fallback={<h1>Loading...</h1>}>
           <Canvas flat shadows linear>
@@ -64,7 +64,7 @@ const AboutPage: React.FC = () => {
 
 <div className="flex flex-col items-start text-left mt-4 md:mt-0 space-y-4">
 
-          <h1 className="text-3xl text-gray-800 md:text-6xl lg:text-6xl text-center md:text-left font-bold leading-tight dark:text-gray-100">
+          <h1 className="text-2xl text-gray-800 md:text-6xl lg:text-6xl text-center md:text-left font-bold leading-tight dark:text-gray-100">
             <Typewriter
               options={{
                 delay: 60,
@@ -92,7 +92,7 @@ const AboutPage: React.FC = () => {
                 ? theme === 'light'
                   ? 'text-[#333]' 
                   : 'text-white' 
-                : 'bg-gradient-to-r from-gray-400 via-gray-500 to-gray-700 bg-[length:400%_400%] bg-clip-text text-transparent animate-gradient-wave' // gradient-wave-text
+                : 'bg-gradient-to-r from-gray-400 via-gray-500 to-gray-700 bg-[length:400%_400%] bg-clip-text text-transparent animate-gradient-wave' 
             } text-center md:text-left`}>
               <Typewriter
                 options={{ delay: isMobile ? 40 : 40 }}
