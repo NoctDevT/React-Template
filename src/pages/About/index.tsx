@@ -32,11 +32,11 @@ const Dashboard: React.FC = () => {
           </div>
 
           <div className="text-center lg:text-left">
-            <h1 className="text-5xl dark:text-slate-600 text-slate-600 font-bold">
+            <h1 className="text-3xl md:text-5xl dark:text-slate-600 text-slate-600 font-bold">
               SOFTWARE <span className="text-slate-600 dark:text-gray-600">DEVELOPER</span>,
               <span className="text-slate-400 dark:text-gray-500"> PHOTOGRAPHER</span>
             </h1>
-            <p className="text-lg text-gray-400 mt-4 text-justify">
+            <p className="text-base md:text-lg text-gray-400 mt-4 text-justify">
             Experienced, results-driven software developer with a passion for creating tailored business solutions that drive success. 
             With expertise in {" "}
             <Tooltip linkColor='text-sky-500' colour={"bg-[#77CBDA]"} keyword="React" description="Modern frontend framework for building user interfaces" />, {" "}
