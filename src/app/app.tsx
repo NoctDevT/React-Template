@@ -1,9 +1,17 @@
-import React from 'react';
+// import React from 'react';
 import { AppRoutes } from './app-routes';
+import Cursor from "../components/cursor"
+import Providers from '../providers';
+import { isMobile } from 'react-device-detect';
 
 export function App() {
   return (
-      <AppRoutes />
+    <div>
+      <Providers> 
+      {isMobile ? null : <Cursor/>}
+        <AppRoutes />
+      </Providers>
+    </div>
   );
 }
 

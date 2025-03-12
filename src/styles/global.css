@@ -1,0 +1,90 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer utilities {
+  @media screen and (max-width: 767px) {
+    .safari-only {
+      padding-bottom: 65px; 
+    }
+  }
+}
+
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  cursor: none;
+}
+
+@media screen and (max-width: 926px) and (orientation: landscape) {
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+  }
+
+  body::before {
+    content: "Please rotate your device to portrait mode.";
+    font-size: 1.5rem;
+    text-align: center;
+    padding: 1rem;
+  }
+
+  #root {
+    display: none; /* Hides the app content in landscape for smaller devices */
+  }
+}
+
+
+
+
+@font-face {
+  font-family: 'Poppins';
+  src: url('/fonts/Poppins-Black.ttf') format('truetype');
+  font-weight: 900; 
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'DepartureMono';
+  src: url('/fonts/DepartureMono-Regular.woff2') format('woff2'),
+       url('/fonts/DepartureMono-Regular.woff') format('woff'),
+       url('/fonts/DepartureMono-Regular.otf') format('opentype');
+  font-weight: 900;
+  font-style: normal;
+}
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+
+
+.cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 11px;
+  height: 11px;
+  background-color: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+  transition: width 0.15s ease, height 0.15s ease, transform 0.15s ease;
+  mix-blend-mode: difference;
+}
+
+.cursor-hover {
+  width: 50px;
+  height: 50px;
+  transform: translate(-50%, -50%);
+}
