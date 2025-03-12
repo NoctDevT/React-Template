@@ -92,7 +92,11 @@ const AboutPage: React.FC = () => {
                   onInit={(typewriter) => {
                     typewriter
                       .typeString(
-                        `<span class="${isMobile ? 'white-text' : 'gradient-wave-text'}">Web Developer and Photographer</span>`
+                        `<span class="${isMobile ? 
+                          (theme === 'light' ? 'light-mode-mobile-text' : 'white-text') : 'gradient-wave-text'
+                        
+                        }">
+                          Web Developer and Photographer</span>`
                       )
                       .callFunction(() => setTimeout(() => setShowGithubLink(true), 1000))
                       .start();
@@ -132,6 +136,11 @@ const AboutPage: React.FC = () => {
           .white-text {
             color: white;
           }
+
+          .light-mode-mobile-text {
+            color: #333; 
+}
+
 
          .gold-wave {
           background: linear-gradient(
