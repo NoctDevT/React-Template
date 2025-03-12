@@ -7,6 +7,8 @@ import { IcosahedronGeometry } from '../../components/three-js-components/icosah
 import { useTheme } from '../../providers/themeProvider';
 import Typewriter from 'typewriter-effect';
 import { FaGithub, FaTwitter } from 'react-icons/fa';
+import { motion } from 'framer-motion';
+import GlitchText from '../../components/animatedComponents/GlitchText';
 
 const AboutPage: React.FC = () => {
   const { theme } = useTheme();
@@ -55,7 +57,18 @@ const AboutPage: React.FC = () => {
           </Canvas>
         </Suspense>
       </div>
+      <motion.footer className="fixed font-departure bottom-8 left-8 text-xs text-gray-600 z-10">
+        <GlitchText text="WEB DEVELOPER" duration={9000} repeatDelay={10000} />
+        <GlitchText text="PHOTOGRAPHER" duration={9000} repeatDelay={10000} />
+        <GlitchText text="PORTFOLIO 2024" duration={9000} repeatDelay={10000} />
+      </motion.footer>
 
+      <motion.div className="fixed bottom-8 right-8 flex flex-col items-end text-2xl text-gray-600 z-10">
+        <p className="text-lg opacity-90">AutDev</p>
+        <p className="text-xs opacity-70 mt-1">
+          Built with Three.JS, React & TypeScript
+        </p>
+      </motion.div>
       <div
   className="absolute top-[0%] sm:top-[24%] left-1/2 transform 
   -translate-x-1/2 sm:left-[15%] tracking-wider sm:transform-none sm:text-left
