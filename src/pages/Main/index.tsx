@@ -26,7 +26,7 @@ const AboutPage: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative h-screen w-screen">
+    <div className="relative min-h-screen w-screen">
       <div className="absolute top-0 left-0 w-full h-full z-0">
         <Suspense fallback={<h1>Loading...</h1>}>
           <Canvas flat shadows linear>
@@ -57,12 +57,12 @@ const AboutPage: React.FC = () => {
       </div>
 
       <div
-  className="absolute top-[2%] sm:top-[20%] left-1/2 transform 
+  className="absolute top-[0%] sm:top-[24%] left-1/2 transform 
   -translate-x-1/2 sm:left-[15%] tracking-wider sm:transform-none sm:text-left
-  md:left-[8%]"
+  md:left-[5%]"
 >
 
-        <div className="flex flex-col text-left mt-16 md:mt-0 space-y-4">
+<div className="flex flex-col items-start text-left mt-4 md:mt-0 space-y-4">
 
           <h1 className="text-3xl text-gray-800 md:text-6xl lg:text-6xl text-center md:text-left font-bold leading-tight dark:text-gray-100">
             <Typewriter
@@ -87,26 +87,28 @@ const AboutPage: React.FC = () => {
 
           {showParagraph && (
             <>
-<p className="hidden md:block text-base md:text-lg dark:text-gray-000 text-white md:text-gray-900 text-center md:text-left">
-<Typewriter
-                  // temporary fix until layout is revised
-                  options={{ delay: isMobile ? 100 : 40 }}
-                  onInit={(typewriter) => {
-                    typewriter
-                      .typeString(
-                        `<span class="${isMobile ? 
-                          (theme === 'light' ? 'light-mode-mobile-text' : 'white-text') : 'gradient-wave-text'
-                        
-                        }">
-                          Full stack Developer and Photographer</span>`
-                      )
-                      .callFunction(() => setTimeout(() => setShowGithubLink(true), 1000))
-                      .start();
-                  }}
-                />
-              </p>
+            <p className={`sm:block text-base md:text-lg ${
+              isMobile 
+                ? theme === 'light'
+                  ? 'text-[#333]' 
+                  : 'text-white' 
+                : 'bg-gradient-to-r from-gray-400 via-gray-500 to-gray-700 bg-[length:400%_400%] bg-clip-text text-transparent animate-gradient-wave' // gradient-wave-text
+            } text-center md:text-left`}>
+              <Typewriter
+                options={{ delay: isMobile ? 40 : 40 }}
+                onInit={(typewriter) => {
+                  typewriter
+                    .typeString(
+                      'Full stack Developer and Photographer'
+                    )
+                    .callFunction(() => setTimeout(() => setShowGithubLink(true), 1000))
+                    .start();
+                }}
+              />
+            </p>
+
               {showGithubLink && (
-                <div className="flex items-center gap-2 mt-4 text-gray-500 justify-center md:justify-start">
+                <div className="flex items-center gap-2 mt-4 text-gray-500 w-full justify-center md:justify-start">
                   <a
                     href="https://github.com/NoctDevT"
                     target="_blank"
