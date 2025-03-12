@@ -12,10 +12,9 @@ import Tooltip from "../../components/tooltip";
 
 const Dashboard: React.FC = () => {
   const socialMedia: SocialMedia = {
-    twitter: 'https://twitter.com/yourprofile',
-    github: 'https://github.com/yourprofile',
-    instagram: null,
-    email: 'yourname@example.com',
+    twitter: 'https://substack.com/@autumnxv',
+    github: 'https://github.com/noctdevt',
+    email: 'developerjyunnie@gmail.com',
   };
 
   return (
@@ -120,7 +119,7 @@ const SkillTable: React.FC = () => {
           {items.map((skill, index) => (
             <TableRow key={index}>
               <TableCell className="p-4 text-sm">{skill.category}</TableCell>
-              <TableCell className="p-4 text-sm">{`➤ ` + skill.skill}</TableCell>
+              <TableCell className="p-4 text-sm">{skill.skill}</TableCell>
             </TableRow>
           ))}
         </TableBody>

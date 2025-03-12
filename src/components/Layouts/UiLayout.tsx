@@ -68,7 +68,7 @@ export const UiLayout: React.FC<UiLayoutProps> = ({
               <Link
                 key={link.path}
                 to={link.path}
-                className="hover:scale-125 font-departure font-light transition-transform ease-in-out delay-350"
+                className="hover:scale-125 font-departure underline font-light transition-transform ease-in-out delay-350"
               >
                 <StaggeredText delayFactor={0.2} baseDelay={index * 0.5}>
                   {link.label}

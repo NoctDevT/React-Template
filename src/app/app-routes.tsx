@@ -14,10 +14,10 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: (
-      <UiLayout links={navigationLinks} brandName='Autumn'>
-        <MotionWrapper>
+      <UiLayout links={navigationLinks} brandName='VOID'>
+        <div style={{position: 'absolute', width: '100%', height: '100%'}}> 
           <Outlet /> 
-        </MotionWrapper>
+        </div>
       </UiLayout>
     ),
     children: routes,

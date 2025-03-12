@@ -92,7 +92,7 @@ const AboutPage: React.FC = () => {
 
       <motion.div className="fixed bottom-8 right-8
         text-2xl text-gray-600 z-10">
-        <p className="md:text-xs text-[0.7rem] dark:text-white text-gray-black opacity-100 dark:opacity-50 mt-1">
+        <p className="md:text-xs text-[0.55rem] dark:text-white text-gray-black opacity-100 dark:opacity-50 mt-1">
           Built with Three.JS, React & TypeScript
         </p>
       </motion.div>

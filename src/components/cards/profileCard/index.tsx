@@ -8,7 +8,6 @@ import { FaTwitter, FaInstagram, FaGithub, FaEnvelope } from 'react-icons/fa';
 export interface SocialMedia { 
   twitter: string | null,
   github: string  | null,
-  instagram: string  | null,
   email : string  | null
 }
 
